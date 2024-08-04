@@ -14,34 +14,19 @@ export default function Home() {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
-  const uppdatePantry = async () => {
+  const updatePantry = async () => {
     const snapshot = query(collection(firestore, 'pantry'))
     const docs = await getDocs(snapshot)
     const inventoryList = []
     docs.forEach((doc) => {
-      inventoryList.push({
-        name: doc.id,
-        ...doc.data(),
-      })
+      inventoryList.push({ name: doc.id, ...doc.data() })
     })
-    setInventory(inventoryList);
-    setData(inventoryList);
-    return inventoryList;
+    setInventory(inventoryList)
   }
-  const [data, setData] = useState([]);
-
+  
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const fetchedData = await uppdatePantry();
-        setData(fetchedData);
-      } catch (error) {
-        console.error('Error fetching data: ', error);
-      }
-    };
-
-    getData();
-  }, []);
+    updatePantry()
+  }, [])
 
 
   const addItem = async (item) => {
@@ -55,7 +40,7 @@ export default function Home() {
       else {
         await setDoc(docRef, {quantity: 1})
       }
-      await uppdatePantry()
+      await updatePantry()
       handleClose()
   }
     
@@ -72,7 +57,7 @@ export default function Home() {
         await setDoc(docRef, {quantity: quantity - 1})
       }
     }
-    await uppdatePantry()
+    await updatePantry()
   }
 
   const increaseQuantity = async (item) => {
@@ -82,7 +67,7 @@ export default function Home() {
     const {quantity} = docSnap.data()
     await setDoc(docRef, {quantity: quantity + 1})
 
-    await uppdatePantry()
+    await updatePantry()
   }
 
   return (
