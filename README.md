@@ -38,16 +38,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Connect to Firebase
 
- - Create a file 'next.config.js'
- - Include all the secrets using the below format: 
-    > module.exports = {
-    > env: {
-    >     FIREBASE_API_KEY: "API_KEY",
-    >     FIREBASE_authDomain: "authDomain",
-    >     FIREABSE_projectId: "projectId",
-    >     FIREBASE_storageBucket: "storageBucket",
-    >     FIREBASE_messagingSenderId: "messagingSenderId",
-    >     FIREBASE_appId: "appId",
-    >     FIREBASE_measurementId: "measurementId"
-    >     },
-    >   }
+ - Create .env file and add the following keys
+    >
+    >     FIREBASE_API_KEY= "API_KEY"
+    >     FIREBASE_authDomain= "authDomain"
+    >     FIREABSE_projectId= "projectId"
+    >     FIREBASE_storageBucket= "storageBucket"
+    >     FIREBASE_messagingSenderId= "messagingSenderId"
+    >     FIREBASE_appId= "appId"
+    >     FIREBASE_measurementId= "measurementId"
+    >    
