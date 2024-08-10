@@ -8,4 +8,7 @@ module.exports = {
         FIREBASE_appId: process.env.FIREBASE_appId,
         FIREBASE_measurementId: process.env.FIREBASE_measurementId
     },
+    images: {
+        domains: ['honeybuilthome.com'],
+    }
   }
