@@ -89,7 +89,9 @@ export default function Pantry() {
 
   return (
     <div>
-        {user ? (<Box 
+        {user ? (
+        <Box>
+        <Box 
       width="100vw"
       height="100vh"
       display="flex"
@@ -171,7 +173,11 @@ export default function Pantry() {
       <Button onClick={()=>{
         handleSignOut()
       }}>Sign Out</Button>
-      <p style={{position:"absolute", marginBottom:0, bottom:5, color:"grey", opacity:0.5}}>By Kuljeet Singh Bhengura</p>
+      
+    </Box>
+    <div style={{backgroundColor:"black" ,color:"white",textAlign:"center"}}>
+        <span>By Kuljeet Singh Bhengura</span>
+    </div>
     </Box>) : (<UnauthorizedPage></UnauthorizedPage>)}
     </div>
   );
