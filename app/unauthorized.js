@@ -16,6 +16,7 @@ const Unauthorized = () => {
             gap={2}
         ><h1 style={{fontFamily: "Times, Times New Roman, serif"}}>Unauthorized user</h1>
         <Button href="/" variant="contained">Login Page</Button>
+        <p style={{position:"absolute", marginBottom:0, bottom:5, color:"grey", opacity:0.5}}>By Kuljeet Singh Bhengura</p>
         </Box>
     )
 }

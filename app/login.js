@@ -58,6 +58,7 @@ const Login = () => {
                         type="submit">
                             <FcGoogle size={100}/>
                         </Button>
+                        <p style={{position:"absolute", marginBottom:0, bottom:5, color:"grey", opacity:0.5}}>By Kuljeet Singh Bhengura</p>
                 </center>
                 
             </div>

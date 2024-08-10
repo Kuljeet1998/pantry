@@ -171,6 +171,7 @@ export default function Pantry() {
       <Button onClick={()=>{
         handleSignOut()
       }}>Sign Out</Button>
+      <p style={{position:"absolute", marginBottom:0, bottom:5, color:"grey", opacity:0.5}}>By Kuljeet Singh Bhengura</p>
     </Box>) : (<UnauthorizedPage></UnauthorizedPage>)}
     </div>
   );
