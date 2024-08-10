@@ -7,9 +7,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button } from "@mui/material";
 
-const login = () => {
+const Login = () => {
     const { user, googleSignIn, logOut } = UserAuth();
-
+    
     const handleSignIn = async () => {
        try{
         await googleSignIn()
@@ -26,8 +26,8 @@ const login = () => {
         }
 
     }
-
-    let [over,setOver]=useState(false);
+    // eslint-disable-next-line
+    let [over,setOver]=useState(false); 
 
     let buttonstyle={
         border: 0,
@@ -43,10 +43,12 @@ const login = () => {
     
 
 	return (
-        <div style={{display:"flex", height:"100vh"}}>
+        <div>
+            {!user ? (
+            <div style={{display:"flex", height:"100vh"}}>
             <div style={{displahy:"flex",alignItems:"center",justifyContent:"center" , height:"100%", width:"50%", alignContent:"center", backgroundColor:"#FFEFD5"}}>
             
-                {!user ? (<center>
+                <center>
                     <h1 style={{color:"#4B0082", fontFamily:"Apple Chancery, cursive", fontSize:"4em"}}>Welcome to Your Pantry</h1><br /><br />
                     <h2 style={{color:"#7B68EE", fontFamily:"Gill Sans, sans-serif", fontSize:"2em"}}>Please login with your google account to continue</h2><br></br><br />
                     <Button style={buttonstyle}
@@ -56,9 +58,7 @@ const login = () => {
                         type="submit">
                             <FcGoogle size={100}/>
                         </Button>
-                </center>) : (
-                    ClientRedirect('/pantry')
-                )}
+                </center>
                 
             </div>
             <div style={{width:"50%"}}>
@@ -71,7 +71,10 @@ const login = () => {
                 alt="new"
                 />
             </div>
+            </div>) : (
+                    ClientRedirect('/pantry')
+                )}
         </div>
 	)
 }
-export default login
+export default Login

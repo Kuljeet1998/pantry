@@ -1,15 +1,18 @@
 'use client'
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { firestore } from "@/firebase";
 import { Box } from "@mui/system";
 import { Button, Modal, Stack, TextField, Typography } from "@mui/material";
-import { addDoc, collection, deleteDoc, doc, getDocs, query, setDoc, getDoc } from "firebase/firestore";
-import { async } from "@firebase/util";
-import { UserAuth } from '../context/AuthContext';
-import UnauthorizedPage from '../unauthorized'
+import { collection, deleteDoc, doc, getDocs, query, setDoc, getDoc } from "firebase/firestore";
+import dynamic from 'next/dynamic'
+import { UserAuth } from "../context/AuthContext";
 
-export default function ViewPantry() {
+const UnauthorizedPage = dynamic(() => import('../unauthorized'), {
+    ssr: false,
+});
+
+
+export default function Pantry() {
 
   const [inventory, setInventory] = useState([])
   const [open, setOpen]= useState(false)
@@ -17,7 +20,8 @@ export default function ViewPantry() {
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
 
-  const { user, googleSignIn, logOut } = UserAuth();
+  const { user, logOut } = UserAuth();
+  
   const updatePantry = async () => {
     const snapshot = query(collection(firestore, 'pantry'))
     const docs = await getDocs(snapshot)

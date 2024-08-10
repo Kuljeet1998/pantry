@@ -3,7 +3,7 @@ import { Button } from '@mui/material'
 import React from 'react'
 import { Box } from "@mui/system";
 
-const unauthorized = () => {
+const Unauthorized = () => {
     return (
         <Box 
             width="100%"
@@ -20,4 +20,4 @@ const unauthorized = () => {
     )
 }
 
-export default unauthorized
+export default Unauthorized
