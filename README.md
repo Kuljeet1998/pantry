@@ -47,4 +47,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     >     FIREBASE_messagingSenderId= "messagingSenderId"
     >     FIREBASE_appId= "appId"
     >     FIREBASE_measurementId= "measurementId"
-    >    
+    >
+
+## Walkthrough:
+[Walkthrough](https://www.loom.com/share/7e246518fd2f41838b35b959f224a56f?sid=eb3edc16-8c51-4e22-8986-1d9d82b25ee0)
+
+## Website:
+[Website](https://pantry-tau.vercel.app/)
